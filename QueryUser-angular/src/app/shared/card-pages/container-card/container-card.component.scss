@@ -1,0 +1,38 @@
+.bg-gradient-custom {
+  min-height: calc(100vh - var(--height-header));
+
+  background: linear-gradient(270deg, #399479, #394b94);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationBg 4s ease infinite;
+  -moz-animation: AnimationBg 4s ease infinite;
+  -o-animation: AnimationBg 4s ease infinite;
+  animation: AnimationBg 4s ease infinite;
+
+  .card {
+    width: 60vw;
+    min-height: 60vh;
+    margin: auto;
+  }
+}
+
+@-webkit-keyframes AnimationBg {
+  0%{background-position:0% 51%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 51%}
+}
+@-moz-keyframes AnimationBg {
+  0%{background-position:0% 51%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 51%}
+}
+@-o-keyframes AnimationBg {
+  0%{background-position:0% 51%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 51%}
+}
+@keyframes AnimationBg {
+  0%{background-position:0% 51%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 51%}
+}

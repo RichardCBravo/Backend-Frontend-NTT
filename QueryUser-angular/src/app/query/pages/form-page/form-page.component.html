@@ -1,0 +1,50 @@
+<app-header-card>
+  <h1 class="h3" card-header> Documento de identidad </h1>
+</app-header-card>
+<app-body-card>
+  <ng-container card-body>
+    <form [formGroup]="myForm" (ngSubmit)="search()" autocomplete="off">
+      <div class="mb-3">
+        <label for="select-idType" class="form-label">Tipo de documento</label>
+        <select
+          formControlName="idType"
+          id="select-idType"
+          class="form-select is-invalid"
+          aria-label="Default select example"
+          [ngClass]="{'is-invalid': showError(myForm.controls['idType'])}">
+          <option disabled value="">Por favor, seleccione una opción....</option>
+          <option value="C">Cédula de Ciudadanía</option>
+          <option value="P">Pasaporte</option>
+        </select>
+        <div
+          id="idTypeHelp"
+          class="form-text"
+          *ngIf="!showError(myForm.controls['idType'])">Seleccione una opción.</div>
+        <div
+          *ngIf="showError(myForm.controls['idType'])"
+          class="form-text invalid-feedback">Por favor, seleccione una opción.</div>
+      </div>
+      <div class="mb-3">
+        <label for="idNumber" class="form-label">Número de documento</label>
+        <input
+          #idNum
+          (input)="format(idNum)"
+          formControlName="idNum"
+          type="text"
+          class="form-control"
+          id="idNumber"
+          [ngClass]="{'is-invalid': showError(myForm.controls['idNum'])}">
+          <div
+          id="idTypeHelp"
+          class="form-text"
+          *ngIf="!showError(myForm.controls['idNum'])">Digite el número de documento. Solo puede ingresar de 8 a 11 caracteres.</div>
+          <div
+          *ngIf="showError(myForm.controls['idNum'])"
+          class="form-text invalid-feedback">Solo puede ingresar de 8 a 11 caracteres</div>
+      </div>
+      <button [disabled]="myForm.invalid" type="submit" class="btn btn-primary">Buscar</button>
+    </form>
+  </ng-container>
+
+</app-body-card>
+

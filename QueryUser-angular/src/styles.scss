@@ -1,0 +1,17 @@
+// Functions first
+@import "../node_modules/bootstrap/scss/functions";
+
+// Variable overrides second
+$primary: #002c76;
+$secondary: #2c9b6d;
+$enable-shadows: true;
+$btn-border-radius: 10rem;
+
+// Then import Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+:root {
+  --height-logo: 2.5rem;
+  --height-header: calc(#{map-get($spacers, 2) * 2} + var(--height-logo));
+}
